@@ -20,7 +20,7 @@ public class Main {
 
         // 데이터 수+1 만큼 sum 배열 0으로 초기화
         int[] sum=new int[dataNum+1];
-        Arrays.fill(sum,0);
+        //Arrays.fill(sum,0); Java는 new int[] 시 자동으로 0 초기화되기에 불필요
 
         // sum[i]=sum[i-1]+data[i]
         for (int i=1;i<=dataNum;i++){
