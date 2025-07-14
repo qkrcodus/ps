@@ -18,24 +18,23 @@ public class Main {
             data[i]=Integer.parseInt(input2[i]);
         }
 
-        // 데이터 수만큼 sum 배열 0으로 초기화
-        int[] sum=new int[dataNum];
-        sum[0]=data[0];
-        
+        // 데이터 수+1 만큼 sum 배열 0으로 초기화
+        int[] sum=new int[dataNum+1];
+        Arrays.fill(sum,0);
+
         // sum[i]=sum[i-1]+data[i]
-        for (int i=1;i<dataNum;i++){
-            sum[i]=sum[i-1]+data[i];
+        for (int i=1;i<=dataNum;i++){
+            sum[i]=sum[i-1]+data[i-1];
         }
 
         // questionNum만큼 반복 공백 기준 숫자 파싱해서 a, b 로 저장
         for (int i=0;i<questionNum;i++) {
             String[] input3 = br.readLine().split(" ");
-            int a = Integer.parseInt(input3[0])-1;
-            int b = Integer.parseInt(input3[1])-1;
+            int a = Integer.parseInt(input3[0]);
+            int b = Integer.parseInt(input3[1]);
 
-            if (a==0) {
-                bw.write(sum[b] + "\n");
-            } else bw.write(sum[b] - sum[a - 1]+ "\n");
+            bw.write(String.valueOf(sum[b] - sum[a - 1]));
+            bw.newLine();
         }
 
         br.close();
