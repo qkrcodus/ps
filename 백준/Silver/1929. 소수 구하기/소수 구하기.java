@@ -22,7 +22,7 @@ public class Main {
         int[] numbers = new int[number + 1];
         List<Integer> primeNumbersList=new ArrayList<>();
         Arrays.fill(numbers, 1);
-        for (int i = 2; i <= number; i++) {
+        for (int i = 2; i*i <= number; i++) {
             for (int j = 2; i * j <= number; j++) {
                 numbers[i * j] = 0;
             }
