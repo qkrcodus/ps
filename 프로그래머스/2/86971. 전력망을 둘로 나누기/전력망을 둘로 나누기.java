@@ -19,10 +19,8 @@ class Solution {
         }
       
         // 간선별로 제거된 상황에서 count 몇개인지 세기 count0, count1에 저장
-        // count0 초기화, dfs 단 돌고 있는 간선이웃 제외, 돌때마다 count0++
-        // count1 초기화, dfs 단 돌고 있는 간선이웃 제외, 돌때마다 count1++
         // int diff = (count1>count0) ? count1-count0 : count0-count1
-        // answer<diff answer=diff;
+        // answer>diff answer=diff;
         
         for (int[] wire : wires){
             int count0,count1=0;
